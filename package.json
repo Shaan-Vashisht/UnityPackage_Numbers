@@ -1,0 +1,11 @@
+{
+  "name": "shaan-vashisht.numbers",
+  "version": "1.0.0",
+  "displayName": "SV Numbers",
+  "unity": "6000.6",
+  "author": {
+    "name": "Shaan Vashisht",
+    "email": "shaan.w.vashisht@gmail.com"
+  },
+  "description": "A unity package with useful classes for representing common mathematical concepts in game development."
+}

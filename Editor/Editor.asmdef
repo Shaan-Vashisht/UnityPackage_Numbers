@@ -1,0 +1,16 @@
+{
+    "name": "shaan-vashisht.Numbers.Editor",
+    "rootNamespace": "SV.Numbers",
+    "references": [
+        "GUID:d1b9c7a3503df3341b41e8827f9106bd"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

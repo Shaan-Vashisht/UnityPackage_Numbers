@@ -1,0 +1,16 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:Foldout text="Foldout" value="true" name="Foldout">
+        <ui:VisualElement focusable="false" style="flex-grow: 0; justify-content: space-between; flex-direction: row; align-self: stretch; align-items: flex-start; flex-wrap: nowrap; align-content: flex-start; background-color: rgba(0, 0, 0, 0);">
+            <ui:FloatField label="Min" value="42.2" binding-path="min" name="MinField" style="flex-direction: column; flex-grow: 1;"/>
+            <uie:ToolbarSpacer style="flex-grow: 0;"/>
+            <ui:FloatField label="Max" value="42.2" binding-path="max" name="MaxField" style="flex-direction: column; flex-grow: 1;"/>
+        </ui:VisualElement>
+        <ui:Slider label="Value" value="42" high-value="100" name="ValueSlider" fill="true" show-input-field="true"/>
+        <ui:Toggle label="Do Overflow" name="OverflowToggle" binding-path="doOverflow" tooltip="If true, the value will wrap around when flowing over/under the bounds instead of clamping"/>
+        <ui:Foldout text="Events" value="false">
+            <uie:PropertyField binding-path="onValueChange"/>
+            <uie:PropertyField binding-path="onValueChangePercent"/>
+            <uie:PropertyField binding-path="onOverflow"/>
+        </ui:Foldout>
+    </ui:Foldout>
+</ui:UXML>

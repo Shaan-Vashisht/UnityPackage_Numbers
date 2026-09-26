@@ -1,0 +1,27 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:Foldout text="Foldout" name="MainFold" value="true" style="height: 329px; justify-content: flex-start; flex-grow: 1; flex-basis: 100px; flex-shrink: 1;">
+        <ui:VisualElement style="flex-grow: 1; -unity-text-align: middle-left; flex-direction: column; justify-content: space-between; align-content: flex-start; align-items: flex-start;">
+            <uie:ToolbarSpacer style="flex-grow: 0;"/>
+            <ui:VisualElement style="flex-grow: 1; flex-direction: row; justify-content: flex-start; align-self: stretch; align-items: center;">
+                <ui:UnsignedIntegerField label="Columns" value="0" name="Columns" binding-path="columns" focusable="false" style="align-items: stretch; justify-content: space-between; align-self: stretch; flex-grow: 1; flex-wrap: nowrap;"/>
+                <ui:Button text="+" name="ColPlus" style="font-size: 20px; -unity-font-style: bold;"/>
+                <ui:Button text="–" name="ColMinus" style="font-size: 20px; -unity-font-style: bold;"/>
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+                <ui:UnsignedIntegerField label="Rows" value="0" name="Rows" binding-path="rows" focusable="false" style="flex-grow: 1; justify-content: space-between; align-items: stretch; flex-shrink: 0; flex-wrap: nowrap; flex-direction: row; align-self: stretch;"/>
+                <ui:Button text="+" name="RowPlus" style="font-size: 20px; -unity-font-style: bold;"/>
+                <ui:Button text="–" name="RowMinus" style="font-size: 20px; -unity-font-style: bold;"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <uie:ToolbarSpacer style="flex-grow: 1; flex-basis: 10px;"/>
+        <ui:ScrollView mode="Horizontal" name="ScrollView" style="flex-grow: 1; justify-content: flex-start; flex-basis: 300px; align-items: stretch; align-self: stretch; align-content: flex-start; flex-direction: column;">
+            <ui:VisualElement style="flex-grow: 1; flex-wrap: nowrap; flex-basis: 100px; flex-direction: column;">
+                <ui:VisualElement name="" style="flex-grow: 1; flex-direction: row; align-self: flex-start; justify-content: flex-start; align-items: stretch; width: 219px;">
+                    <ui:Label text="Column" style="text-overflow: clip; flex-basis: 60px; -unity-text-align: upper-right;"/>
+                    <ui:VisualElement name="ColsIndexContainer" style="flex-grow: 1; flex-direction: row; align-items: flex-start; align-self: stretch; justify-content: flex-start;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="RowContainer" style="flex-grow: 1; align-self: stretch; align-items: stretch;"/>
+            </ui:VisualElement>
+        </ui:ScrollView>
+    </ui:Foldout>
+</ui:UXML>
