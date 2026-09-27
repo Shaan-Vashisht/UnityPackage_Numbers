@@ -1,5 +1,5 @@
 {
-    "name": "Runtime",
+    "name": "shaan-vashisht.Numbers.Tests",
     "rootNamespace": "SV.Numbers",
     "references": [
         "UnityEngine.TestRunner",
