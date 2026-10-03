@@ -1,6 +1,6 @@
 {
     "name": "shaan-vashisht.Numbers.Editor",
-    "rootNamespace": "SV.Numbers",
+    "rootNamespace": "SV.Numbers.Editor",
     "references": [
         "GUID:d1b9c7a3503df3341b41e8827f9106bd"
     ],

@@ -77,17 +77,15 @@ namespace SV.Numbers
     [Serializable]
     public class BoundInt : BoundValue<int>
     {
-        /// If true, the field value will wrap around the interval when going beyond one of the bounds.
-        [SerializeField]
+        [SerializeField, Tooltip("If true, the field value will wrap around the interval when going beyond one of the bounds.")]
         private bool doOverflow;
-        private int interval;
+        private int Interval => Max - Min;
         
         public new int Min { 
             get => min; 
             set
             {
                 base.Min = value;
-                interval = Max - Min;
                 onValueChangePercent?.Invoke(Percent);
             }
         }
@@ -96,7 +94,6 @@ namespace SV.Numbers
             set
             {
                 base.Max = value;
-                interval = Max - Min;
                 onValueChangePercent?.Invoke(Percent);
             }
         }
@@ -116,13 +113,13 @@ namespace SV.Numbers
                 {
                     while (final < Min)
                     {
-                        final += interval;
+                        final += Interval;
                         onOverflow?.Invoke(BoundReachedType.Min);
                     }
 
                     while (final > Max)
                     {
-                        final -= interval;
+                        final -= Interval;
                         onOverflow?.Invoke(BoundReachedType.Max);
                     }
                 }
@@ -145,7 +142,7 @@ namespace SV.Numbers
         }
         
         /// The field's current value normalized to the interval, where 0 = Min and 1 = Max.
-        public float Percent => (float)(value - Min) / interval;
+        public float Percent => (float)(value - Min) / Interval;
         
         /// Event invoked when the field's value goes beyond the interval.
         /// Passes the bound the value flowed over.
@@ -159,7 +156,6 @@ namespace SV.Numbers
         public BoundInt(int min, int max, int value, bool doOverflow) : base(min, max, value)
         {
             this.doOverflow = doOverflow;
-            interval = max - min;
         }
     }
     
@@ -167,16 +163,15 @@ namespace SV.Numbers
     [Serializable]
     public class BoundFloat : BoundValue<float>
     {
-        /// If true, the field value will wrap around the interval when going beyond one of the bounds.
-        public readonly bool doOverflow;
-        private float interval;
+        [SerializeField, Tooltip("If true, the field value will wrap around the interval when going beyond one of the bounds.")]
+        private bool doOverflow;
+        private float Interval => Max - Min;
         
         public new float Min { 
             get => min; 
             set
             {
                 base.Min = value;
-                interval = Max - Min;
                 onValueChangePercent?.Invoke(Percent);
             }
         }
@@ -185,7 +180,6 @@ namespace SV.Numbers
             set
             {
                 base.Max = value;
-                interval = Max - Min;
                 onValueChangePercent?.Invoke(Percent);
             }
         }
@@ -205,13 +199,13 @@ namespace SV.Numbers
                 {
                     while (final < Min)
                     {
-                        final += interval;
+                        final += Interval;
                         onOverflow?.Invoke(BoundReachedType.Min);
                     }
 
                     while (final > Max)
                     {
-                        final -= interval;
+                        final -= Interval;
                         onOverflow?.Invoke(BoundReachedType.Max);
                     }
                 }
@@ -234,7 +228,7 @@ namespace SV.Numbers
         }
         
         /// The field's current value normalized to the interval, where 0 = Min and 1 = Max.
-        public float Percent => (value - Min) / interval;
+        public float Percent => (value - Min) / Interval;
         
         /// Event invoked when the field's value goes beyond the interval.
         /// Passes the bound the value flowed over.
@@ -248,7 +242,6 @@ namespace SV.Numbers
         public BoundFloat(float min, float max, float value, bool doOverflow) : base(min, max, value)
         {
             this.doOverflow = doOverflow;
-            interval = max - min;
         }
     }
 }
